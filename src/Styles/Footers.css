@@ -1,0 +1,29 @@
+.footers {
+    background-color: #1a202c; /* Dark Gray */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footers p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .footers-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .footers-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .footers-links a:hover {
+    color: #63b3ed;
+  }
+  

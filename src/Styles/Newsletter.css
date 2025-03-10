@@ -1,0 +1,119 @@
+.newsletter {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+  }
+  
+  .newsletter-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .newsletter-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .newsletter-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .newsletter-form {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .newsletter-input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .newsletter-input:focus {
+    outline: none;
+    border-color: #f45d48;
+  }
+  
+  .subscribe-btn {
+    padding: 0.75rem 1rem;
+    background-color: #f45d48;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscribe-btn:hover {
+    background-color: #e04235;
+  }
+  
+  .success-message {
+    color: #2ecc71;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  
+  .privacy-note {
+    font-size: 0.8rem;
+    color: #777;
+  }
+  
+  .privacy-note a {
+    color: #f45d48;
+    text-decoration: none;
+  }
+  
+  .privacy-note a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (min-width: 640px) {
+    .input-group {
+      flex-direction: row;
+    }
+    
+    .newsletter-input {
+      border-radius: 4px 0 0 4px;
+    }
+    
+    .subscribe-btn {
+      border-radius: 0 4px 4px 0;
+      padding: 0 1.5rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .newsletter {
+      padding: 5rem 0;
+    }
+    
+    .newsletter-title {
+      font-size: 2rem;
+    }
+    
+    .newsletter-description {
+      font-size: 1.1rem;
+    }
+  }
