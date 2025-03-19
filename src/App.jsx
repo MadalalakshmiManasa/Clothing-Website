@@ -15,8 +15,8 @@ function App() {
   return (
     <>
     <Header/>
+   <CategoryNav/>
     <Banner/>
-    <CategoryNav/>
     <ProductCards/>
     <Newsletter/>
     <Footers/>

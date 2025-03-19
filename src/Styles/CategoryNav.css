@@ -1,61 +1,103 @@
-.category-nav {
-    padding: 2rem 0;
-    background-color: #f9f9f9;
-  }
-  
-  .category-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    text-align: center;
-  }
-  
-  .category-title {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
+
+  /* Base Styles */
+/* CATEGORY NAVIGATION */
+ .category-nav {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 20px 0;
+}
+
+.category-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* CATEGORY BUTTONS */
+ .category-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.category-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.category-button:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.category-button.active {
+  background-color: #ff3b3b;
+  color: white;
+} 
+
+/* RESPONSIVE DESIGN */
+
+/* Small Screens (Mobile) */
+ @media (max-width: 640px) {
   .category-buttons {
-    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-button {
+    width: 90%;
+    padding: 14px;
+    font-size: 1.2rem;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+} 
+
+/* Medium Screens (Tablets) */
+ @media (min-width: 641px) and (max-width: 1024px) {
+  .category-container {
+    max-width: 90%;
+  }
+
+  .category-buttons {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem;
   }
-  
+
   .category-button {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    background-color: white;
-    color: #333;
-    font-weight: 500;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-size: 1.1rem;
+    padding: 12px 18px;
   }
-  
-  .category-button:hover {
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+} 
+
+/* Large Screens (Laptops & Desktops) */
+@media (min-width: 1025px) {
+  .category-container {
+    max-width: 1100px;
   }
-  
-  .category-button.active {
-    background-color: #f45d48;
-    color: white;
+
+  .category-button {
+    font-size: 1rem;
+    padding: 12px 22px;
   }
-  
-  @media (min-width: 768px) {
-    .category-nav {
-      padding: 3rem 0;
-    }
-    
-    .category-title {
-      font-size: 2rem;
-    }
-    
-    .category-buttons {
-      gap: 1rem;
-    }
-  }
+} 
+
+

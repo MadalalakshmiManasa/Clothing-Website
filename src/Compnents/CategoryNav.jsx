@@ -1,42 +1,50 @@
-import React, { useState } from 'react';
+
+
+import React, { useState, useCallback } from 'react';
 import '../styles/CategoryNav.css';
+
+const categories = [
+  { id: 'all', name: 'All Products' },
+  { id: 'men', name: 'Men' },
+  { id: 'women', name: 'Women' },
+  { id: 'kids', name: 'Kids' },
+  { id: 'accessories', name: 'Accessories' }
+];
 
 const CategoryNav = ({ onCategoryChange }) => {
   const [activeCategory, setActiveCategory] = useState('all');
-  
-  const categories = [
-    { id: 'all', name: 'All Products' },
-    { id: 'men', name: 'Men' },
-    { id: 'women', name: 'Women' },
-    { id: 'kids', name: 'Kids' },
-    { id: 'accessories', name: 'Accessories' }
-  ];
-  
-  const handleCategoryClick = (categoryId) => {
-    setActiveCategory(categoryId);
-    if (onCategoryChange) {
-      onCategoryChange(categoryId);
+
+  const handleCategoryClick = useCallback((categoryId) => {
+    if (activeCategory !== categoryId) {
+      setActiveCategory(categoryId);
+      onCategoryChange?.(categoryId); // Optional chaining for safety
     }
-  };
-  
+  }, [activeCategory, onCategoryChange]);
+
   return (
-    <div className="category-nav">
+    <nav className="category-nav" aria-label="Product Categories">
       <div className="category-container">
-        <h2 className="category-title">Shop By Category</h2>
-        <div className="category-buttons">
-          {categories.map(category => (
+        <h2 className="category-title">Shop by Category</h2>
+        <div className="category-buttons" role="tablist">
+          {categories.map(({ id, name }) => (
             <button
-              key={category.id}
-              className={`category-button ${activeCategory === category.id ? 'active' : ''}`}
-              onClick={() => handleCategoryClick(category.id)}
+              key={id}
+              className={`category-button ${activeCategory === id ? 'active' : ''}`}
+              onClick={() => handleCategoryClick(id)}
+              aria-selected={activeCategory === id}
+              role="tab"
             >
-              {category.name}
-            </button>
+              {name}
+            </button>  
           ))}
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
+
 export default CategoryNav;
+
+
+
